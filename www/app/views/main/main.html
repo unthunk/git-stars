@@ -1,7 +1,7 @@
 <h1 ng-bind="heading"></h1>
 
-<div ng-repeat="repo in repos">
-  {{repo.name}}
+<div ng-repeat="repo in repos | orderBy: '-stargazers_count'">
+  {{repo.name}} {{repo.stargazers_count}}
 </div>
 
 
