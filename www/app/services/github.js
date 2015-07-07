@@ -13,7 +13,7 @@ app.services
       getCommits: function() {
         return $resource('https://api.github.com/repos/:owner/:repo/commits', {}, {
       		query: {method: 'GET', params: {owner:'@owner', repo: '@repo', since: recent.toISOString()}, isArray:true}
-    		})
+    		});
 
       },
 
