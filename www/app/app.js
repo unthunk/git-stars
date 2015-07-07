@@ -15,6 +15,10 @@ var gitsortApp = angular.module(app.name, ['ngRoute', 'ngResource', 'gitsortAppC
 	      controller: 'mainCtrl',
 	      templateUrl: 'app/views/main/main.html'
 	    })
+      .when('/repo/:org/:repo', {
+	      controller: 'repoCtrl',
+	      templateUrl: 'app/views/repo/repo.html'
+	    })
 			.otherwise({
         redirectTo: '/'
       });
