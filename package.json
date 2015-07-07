@@ -4,9 +4,9 @@
   "description": "display git projects for an organization ranked by a metric and allow browsing of recent commits",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start karma.conf.js"
   },
-  "author": "lucas myers",
+  "author": "Lucas Myers <lucas@unthunk.com>",
   "license": "MIT",
   "dependencies": {
     "bower": "^1.4.1",
@@ -17,6 +17,11 @@
   },
   "devDependencies": {
     "grunt-nodemon": "^0.4.0",
-    "load-grunt-tasks": "^3.2.0",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.12.37",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-firefox-launcher": "^0.1.6",
+    "karma-junit-reporter": "^0.2.2",
+    "load-grunt-tasks": "^3.2.0"
   }
 }
