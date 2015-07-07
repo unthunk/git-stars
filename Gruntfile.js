@@ -6,6 +6,22 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
 
+    // nodemon config
+    nodemon: {
+      dev: {
+        script: 'server.js',
+        options: {
+            env: {
+              ENV: '/www'
+            },
+            watch: [
+                'www',
+                'bower_components'
+            ]
+        }
+      }
+    }
+
   });
 
 grunt.registerTask('default', [
