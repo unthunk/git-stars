@@ -1,0 +1,27 @@
+{
+  "name": "gitsort",
+  "version": "0.0.1",
+  "homepage": "",
+  "authors": [
+    "Lucas Myers <lucas@unthunk.com>"
+  ],
+  "description": "display git projects for an organization ranked by a metric and allow browsing of recent commits",
+  "main": "www/index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.2",
+    "angular-resource": "~1.4.2",
+    "angular-route": "~1.4.2"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.2"
+  }
+}
