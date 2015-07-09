@@ -1,10 +1,5 @@
 <h1 ng-bind="heading"></h1>
 
 <div ng-repeat="repo in repos | orderBy: '-stargazers_count'">
-  {{repo.name}} {{repo.stargazers_count}}
+  <i class="starry"></i>  <a ng-href="#/repo/{{repo.owner.login}}/{{repo.name}}">{{repo.name}}</a> {{repo.stargazers_count}}
 </div>
-
-
-<!-- <div ng-repeat="commit in commits">
-  {{commit.author.login}}
-</div> -->

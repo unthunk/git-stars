@@ -5,17 +5,12 @@
 app.controllers
   .controller('mainCtrl', ['$scope', 'Github', function ($scope, Github) {
 
-    var git = {
-      org: '',
-      repo: ''
-    };
+    $scope.org = '';
 
-    $scope.heading = 'gitsort';
+    $scope.heading = 'Stargazed repos!';
 
-
-		// $scope.commits = Github.getCommits().query({owner:git.org,repo:git.repo});
-
-    $scope.repos = Github.getRepos().query({org:git.org});
-
+    Github.getRepos().query({org:$scope.org}).$promise.then(function(data){
+      $scope.repos = data;
+    });
 
 }]);
