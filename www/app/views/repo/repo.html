@@ -1,5 +1,6 @@
 <h1 ng-bind="heading"></h1>
-
+<h2 ng-bind="repo.name"></h2>
+<p>Activity in the past <span ng-bind="days"></span> days:</p>
 <div ng-repeat="commit in commits">
   {{commit.author.login}}
 </div>

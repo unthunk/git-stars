@@ -5,16 +5,19 @@
 app.controllers
   .controller('repoCtrl', ['$scope', '$routeParams', 'Github', function ($scope, $routeParams, Github) {
 
-    var git = {
-      org: '',
-      repo: ''
-    };
+    $scope.days = 90;
 
     $scope.org = $routeParams.org || false;
-    $scope.repo = $routeParams.repo || false;
+    $scope.repoName = $routeParams.repo || false;
 
     $scope.heading = 'gitsort';
 
-		$scope.commits = Github.getCommits().query({owner:$scope.org,repo:$scope.repo});
+    Github.getRepo().query({owner:$scope.org,repo:$scope.repoName}).$promise.then(function(data){
+      $scope.repo = data;
+    });
+
+    Github.getCommits($scope.days).query({owner:$scope.org,repo:$scope.repoName}).$promise.then(function(data){
+      $scope.commits = data;
+    });
 
 }]);
