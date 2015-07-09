@@ -1,20 +1,48 @@
 'use strict';
 
-describe('Main controller', function() {
+describe('Main Controller', function() {
+  var scope, ctrl, httpBackend;
+
+
   beforeEach(module('gitsortApp'));
 
-  var $controller;
+  beforeEach(
+    inject(
+      function($controller, $rootScope, Github, $httpBackend) {
+        httpBackend = $httpBackend;
+        scope = $rootScope.$new();
+        ctrl = $controller('mainCtrl', {
+          $scope: scope, Github: Github });
 
-  beforeEach(inject(function(_$controller_){
-    $controller = _$controller_;
-  }));
+          var mockData = [
+            {
+              'id': 1234,
+              'name': 'sizzle',
+              'full_name': 'jquery/sizzle',
+              'owner': {
+                'login': 'jquery'
+              },
+              'private': false,
+              'html_url': 'https://github.com/jquery/sizzle',
+              'description': 'A sizzlin hot selector engine.'
+            }
+          ];
 
-  describe('$scope.heading',function(){
-    it('has the correct text', function() {
-      var $scope = {};
-      var controller = $controller('mainCtrl', { $scope: $scope });
-      expect($scope.heading).toEqual('gitsort');
-    });
+        var url = 'https://api.github.com/orgs/netflix/repos';
+        httpBackend.whenGET(url).respond(mockData);
+      }
+    )
+  );
+
+  it('should set searchResult on successful search', function() {
+    console.log('before flush',scope.repos);
+    expect(scope.repos).toBe(undefined);
+    httpBackend.flush();
+
+    console.log(scope.repos);
+
+    expect(scope.repos[0].id).toBe(1234);
+    expect(scope.repos[0].name).toBe('sizzle');
   });
 
 });
