@@ -20,4 +20,13 @@ app.controllers
       $scope.commits = data;
     });
 
+    $scope.getCommit = function(index){
+      $scope.sha = $scope.commits[index].sha;
+
+      Github.getCommit().query({owner:$scope.org, repo:$scope.repoName, sha:$scope.sha}).$promise.then(function(data){
+        $scope.commit = data;
+      });
+
+    };
+
 }]);

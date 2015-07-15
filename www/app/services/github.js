@@ -27,6 +27,12 @@ app.services
 
       },
 
+      getCommit: function() {
+        return $resource('https://api.github.com/repos/:owner/:repo/commits/:sha', {}, {
+      		query: {method: 'GET', params: {owner:'@owner', repo: '@repo', sha: '@sha'}, isArray:false}
+    		});
+      },
+
 			getRepos: function() {
 				return $resource('https://api.github.com/orgs/:org/repos', {}, {
       		query: {method: 'GET', params: {org:'@org'}, isArray:true}
