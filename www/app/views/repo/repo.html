@@ -3,8 +3,11 @@
 <p>Activity in the past <span ng-bind="days"></span> days:</p>
 <div ng-repeat="commit in commits">
   <img ng-src="{{avatarUrl(commit)}}" />
-  {{commit.author.login}}
-  <a ng-click="getCommit($index)" href="" ng-bind="commit.commit.message"></a>
+  <h3 ng-bind="commit.author.login"></h3>
+
+
+  <p>commited on <span ng-bind="commit.commit.author.date | date: 'MMMM d'"></span></p>
+  <p><a ng-click="getCommit($index)" href="" ng-bind="commit.commit.message"></a></p>
 </div>
 
 
