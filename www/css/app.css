@@ -1,3 +1,6 @@
 .starry:before {
   content: "\2605";
 }
+.avatar {
+  width: 50px;
+}

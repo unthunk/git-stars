@@ -2,7 +2,7 @@
 <h2 ng-bind="repo.name"></h2>
 <p>Activity in the past <span ng-bind="days"></span> days:</p>
 <div ng-repeat="commit in commits">
-  <img ng-src="{{avatarUrl(commit)}}" />
+  <img class="avatar" ng-src="{{avatarUrl(commit)}}" />
   <h3 ng-bind="commit.author.login"></h3>
 
 
