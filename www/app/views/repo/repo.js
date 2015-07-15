@@ -29,4 +29,8 @@ app.controllers
 
     };
 
+    $scope.avatarUrl = function(commit) {
+      return commit.author.gravatar_id || commit.author.avatar_url;
+    };
+
 }]);

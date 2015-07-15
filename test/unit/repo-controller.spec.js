@@ -17,4 +17,30 @@ describe('Repo controller', function() {
     });
   });
 
+
+
+  describe('$scope.avatarUrl',function(){
+    it('returns the correct value', function() {
+      var $scope = {};
+      var controller = $controller('repoCtrl', { $scope: $scope });
+      var gravatar = {
+        author:
+        {
+          gravatar_id: 'gravatar.jpg',
+          avatar_url: ''
+        }
+      };
+      var avatar = {
+        author:
+        {
+          gravatar_id: '',
+          avatar_url: 'avatar.jpg'
+        }
+      };
+
+      expect($scope.avatarUrl(gravatar)).toEqual('gravatar.jpg');
+      expect($scope.avatarUrl(avatar)).toEqual('avatar.jpg');
+    });
+  });
+
 });
