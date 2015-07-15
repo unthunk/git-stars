@@ -1,7 +1,18 @@
-<div>
-{{commit.sha}}
+<div class="commit">
+  <p class="sha" ng-bind="commit.sha"></p>
+
+  Additions {{commit.stats.additions}}
+  Deletions {{commit.stats.deletions}}
+  {{commit.html_url}}
+  <div ng-repeat="file in commit.files">
+    hello
+    <p>{{file.filename}}</p>
 
 
-
-
+    {{file.status}}
+    {{file.changes}}
+    {{file.additions}}
+    {{file.deletions}}
+    <code><pre ng-bind="file.patch"></pre></code>
+  </div>
 </div>
