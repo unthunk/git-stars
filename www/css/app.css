@@ -4,3 +4,13 @@
 .avatar {
   width: 50px;
 }
+
+.diff pre, .diff code {
+  margin: 0;
+}
+.diff .added {
+  color: #0f0;
+}
+.diff .removed {
+  color: #f00;
+}

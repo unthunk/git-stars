@@ -13,6 +13,7 @@ module.exports = function(config){
       'www/app/app.js',
       'www/app/views/**/*.js',
       'www/app/services/**/*.js',
+      'www/app/directives/**/*.js',
       'test/unit/**/*.spec.js'
     ],
 

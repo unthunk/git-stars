@@ -5,7 +5,7 @@
   Deletions {{commit.stats.deletions}}
   {{commit.html_url}}
   <div ng-repeat="file in commit.files">
-    hello
+
     <p>{{file.filename}}</p>
 
 
@@ -13,6 +13,8 @@
     {{file.changes}}
     {{file.additions}}
     {{file.deletions}}
-    <code><pre ng-bind="file.patch"></pre></code>
+    <div class="diff">
+      <pre ng-repeat="line in prettyDiff(file.patch)" class="{{line.css}}" ><code ng-bind="line.line"></code></pre>
+    </div>
   </div>
 </div>
