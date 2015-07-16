@@ -14,7 +14,7 @@
     {{file.additions}}
     {{file.deletions}}
     <div class="diff">
-      <pre ng-repeat="line in prettyDiff(file.patch)" class="{{line.css}}" ><code ng-bind="line.line"></code></pre>
+      <span ng-repeat="line in prettyDiff(file.patch)" class="code {{line.css}}" ng-bind="line.line"></span>
     </div>
   </div>
 </div>

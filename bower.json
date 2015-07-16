@@ -19,7 +19,8 @@
   "dependencies": {
     "angular": "~1.4.2",
     "angular-resource": "~1.4.2",
-    "angular-route": "~1.4.2"
+    "angular-route": "~1.4.2",
+    "skeleton-css": "~2.0.4"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.2"
