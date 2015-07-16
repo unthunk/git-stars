@@ -10,7 +10,7 @@ app.controllers
     $scope.org = $routeParams.org || false;
     $scope.repoName = $routeParams.repo || false;
 
-    $scope.heading = 'gitsort';
+    $scope.heading = 'git-stars';
 
     Github.getRepo().query({owner:$scope.org,repo:$scope.repoName}).$promise.then(function(data){
       $scope.repo = data;
