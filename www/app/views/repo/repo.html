@@ -9,16 +9,16 @@
     <div class="four columns">
 
       <p>Activity in the past <span ng-bind="days"></span> days:</p>
-      <div ng-repeat="commit in commits">
-        <img class="avatar" ng-src="{{avatarUrl(commit)}}" />
-        <h3 ng-bind="commit.author.login"></h3>
-
-
-        <p>commited on <span ng-bind="commit.commit.author.date | date: 'MMMM d'"></span></p>
-        <p><a ng-click="getCommit($index)" href="" ng-bind="commit.commit.message"></a></p>
+      <div ng-repeat="commit in commits" class="commit">
+        <img class="avatar pull-left" ng-src="{{avatarUrl(commit)}}"/>
+        <div class="commit-meta clearfix">
+          <p class="commited-by"><strong ng-bind="commit.author.login"></strong></p>
+          <p class="commited-on">commited on <span ng-bind="commit.commit.author.date | date: 'MMMM d'"></span></p>
+        </div>
+        <div class="commit-message">
+          <p><a ng-click="getCommit($index)" href="" ng-bind="commit.commit.message"></a></p>
+        </div>
       </div>
-
-
 
     </div>
     <div class="eight columns">

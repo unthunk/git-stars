@@ -1,10 +1,55 @@
+/* core */
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* skeleton */
+.container {
+  max-width: 1280px;
+}
+
+/* stars */
 .starry:before {
   content: "\2605";
 }
-.avatar {
+
+/* commit */
+.commit .commit-meta {
+  background-color: #f0f9ff;
+  margin-bottom: 10px;
+}
+.commit .avatar {
   width: 50px;
 }
+.commit .commit-meta p {
+  margin: 0 0 0 65px;
+}
+.commit .commit-message {
+  font-family: monospace;
+}
+.commit .commit-message a, .commit .commit-message a:hover {
+  color: #888;
+}
 
+/* commit details */
+
+/* diff */
 .diff {
   background-color: #f1f1f1;
   margin: 1em 0px;
