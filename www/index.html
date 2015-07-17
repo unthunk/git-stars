@@ -2,15 +2,18 @@
 <html ng-app="gitsortApp">
 <head>
     <title>git-stars</title>
+    <!-- build:css css/app.min.css -->
     <link rel="stylesheet" href="bower_components/skeleton-css/css/normalize.css">
     <link rel="stylesheet" href="bower_components/skeleton-css/css/skeleton.css">
     <link rel="stylesheet" href="css/app.css">
+    <!-- /build -->
 </head>
 <body>
 
   <div ng-view>
   </div>
 
+    <!-- build:js js/app.min.js -->
     <!-- Angular -->
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
@@ -22,6 +25,7 @@
     <script src="app/services/github.js"></script>
     <script src="app/views/main/main.js"></script>
     <script src="app/views/repo/repo.js"></script>
+    <!-- /build -->
 
 </body>
 <html>
