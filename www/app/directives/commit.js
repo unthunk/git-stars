@@ -15,6 +15,7 @@ angular.module(app.name)
 }])
 .controller('commitCtrl',['$scope','Github',function($scope,Github){
 
+  // parse patch blob from github and determine which lines need added/removed styles
   function prettyDiff(input) {
     var arr, i, css,
       added = /^\+/,
@@ -29,13 +30,13 @@ angular.module(app.name)
       else if(removed.test(arr[i])) {
         css = 'removed';
       }
-
       arr[i] = { css: css, line: arr[i]};
     }
 
     return arr;
   }
 
+  // update files with prettyDiff details when commit changes
   $scope.$watch('commit', function(newValue) {
     var arr =[], i;
     if(newValue && newValue.files) {

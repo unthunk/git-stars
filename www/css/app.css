@@ -51,6 +51,9 @@ a:hover {
 .commit-details .commit-message {
   font-family: monospace;
 }
+.commit-details .counts {
+  display: inline;
+}
 
 /* diff */
 .diff {

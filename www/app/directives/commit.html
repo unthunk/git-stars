@@ -2,9 +2,11 @@
   <p><a class="sha" ng-bind="commit.sha" ng-href="{{commit.html_url}}" target="_blank"></a></p>
   <p ng-bind="commit.commit.message" class="commit-message"></p>
 
-  <p ng-show="commit.stats.additions">Additions <span ng-bind="commit.stats.additions"</span></p>
-  <p ng-show="commit.stats.deletions">Deletions <span ng-bind="commit.stats.deletions"</span></p>
-    
+  <div class="counts">
+    <p ng-show="commit.stats.additions">Additions <span ng-bind="commit.stats.additions"</span></p>
+    <p ng-show="commit.stats.deletions">Deletions <span ng-bind="commit.stats.deletions"</span></p>
+  </div>
+
   <div ng-repeat="file in commit.files">
     <p><strong ng-bind="file.filename"></strong></p>
 
