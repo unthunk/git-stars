@@ -41,3 +41,7 @@ ENV=\dist nodemon
 ```
 npm test
 ```
+
+## license
+
+MIT
