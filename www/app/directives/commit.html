@@ -1,12 +1,11 @@
-<div class="commit">
+<div class="commit-details">
   <p class="sha" ng-bind="commit.sha"></p>
 
   Additions {{commit.stats.additions}}
   Deletions {{commit.stats.deletions}}
   {{commit.html_url}}
   <div ng-repeat="file in commit.files">
-
-    <p>{{file.filename}}</p>
+    <p><strong ng-bind="file.filename"></strong></p>
 
 
     {{file.status}}
@@ -14,7 +13,7 @@
     {{file.additions}}
     {{file.deletions}}
     <div class="diff">
-      <span ng-repeat="line in prettyDiff(file.patch)" class="code {{line.css}}" ng-bind="line.line"></span>
+      <span ng-repeat="line in files[$index]" class="code {{line.css}}" ng-bind="line.line"></span>
     </div>
   </div>
 </div>

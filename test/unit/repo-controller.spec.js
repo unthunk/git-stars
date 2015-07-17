@@ -13,7 +13,7 @@ describe('Repo controller', function() {
     it('has the correct text', function() {
       var $scope = {};
       var controller = $controller('repoCtrl', { $scope: $scope });
-      expect($scope.heading).toEqual('gitsort');
+      expect($scope.heading).toEqual('git-stars');
     });
   });
 

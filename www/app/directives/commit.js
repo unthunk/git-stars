@@ -15,8 +15,7 @@ angular.module(app.name)
 }])
 .controller('commitCtrl',['$scope','Github',function($scope,Github){
 
-  $scope.prettyDiff = function(input) {
-
+  function prettyDiff(input) {
     var arr, i, css,
       added = /^\+/,
       removed = /^-/;
@@ -36,5 +35,16 @@ angular.module(app.name)
 
     return arr;
   }
+
+  $scope.$watch('commit', function(newValue) {
+    var arr =[], i;
+    if(newValue && newValue.files) {
+      for(i=0;i<newValue.files.length;i++) {
+        arr.push(prettyDiff(newValue.files[i].patch));
+      }
+    }
+    $scope.files = arr;
+
+  });
 
 }]);
