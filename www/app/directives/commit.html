@@ -1,19 +1,22 @@
 <div class="commit-details">
-  <p class="sha" ng-bind="commit.sha"></p>
+  <p><a class="sha" ng-bind="commit.sha" ng-href="{{commit.html_url}}" target="_blank"></a></p>
+  <p ng-bind="commit.commit.message" class="commit-message"></p>
 
-  Additions {{commit.stats.additions}}
-  Deletions {{commit.stats.deletions}}
-  {{commit.html_url}}
+  <p ng-show="commit.stats.additions">Additions <span ng-bind="commit.stats.additions"</span></p>
+  <p ng-show="commit.stats.deletions">Deletions <span ng-bind="commit.stats.deletions"</span></p>
+    
   <div ng-repeat="file in commit.files">
     <p><strong ng-bind="file.filename"></strong></p>
 
-
-    {{file.status}}
-    {{file.changes}}
-    {{file.additions}}
-    {{file.deletions}}
+    <p>
+    <span ng-bind="file.status"></span>
+    <span ng-bind="file.changes"></span>
+    <span ng-bind="file.additions"></span>
+    <span ng-bind="file.deletions"></span>
+    </p>
     <div class="diff">
       <span ng-repeat="line in files[$index]" class="code {{line.css}}" ng-bind="line.line"></span>
     </div>
+    <hr>
   </div>
 </div>

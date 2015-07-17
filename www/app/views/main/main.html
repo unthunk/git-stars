@@ -2,7 +2,7 @@
   <div class="row">
     <div class="twelve columns">
       <h1 ng-bind="heading"></h1>
-
+      <p>Popular repos for <span ng-bind="org"></span> based on number of stargazers.</p>
       <div ng-repeat="repo in repos | orderBy: '-stargazers_count'">
         <i class="starry"></i>  <a ng-href="#/repo/{{repo.owner.login}}/{{repo.name}}">{{repo.name}}</a> {{repo.stargazers_count}}
       </div>

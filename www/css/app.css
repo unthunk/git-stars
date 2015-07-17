@@ -48,6 +48,9 @@ a:hover {
 }
 
 /* commit details */
+.commit-details .commit-message {
+  font-family: monospace;
+}
 
 /* diff */
 .diff {
