@@ -7,7 +7,7 @@ app.controllers
 
     $scope.org = '';
 
-    $scope.heading = 'Stargazed repos!';
+    $scope.heading = 'git-stars';
 
     Github.getRepos().query({org:$scope.org}).$promise.then(function(data){
       $scope.repos = data;
